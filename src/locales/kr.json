@@ -1,0 +1,13 @@
+{
+  "app": {
+    "hello": "Hello World!",
+    "home": "Home",
+    "about": "About",
+    "users": "Users",
+    "twice": "트와이스"
+  },
+  "setting": {
+    "settingTitle": "장치설정",
+    "languageTitle": "언어"
+  }
+}

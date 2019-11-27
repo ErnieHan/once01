@@ -1,0 +1,13 @@
+{
+  "app": {
+    "hello": "Hello World!",
+    "home": "Home",
+    "about": "About",
+    "users": "Users",
+    "twice": "兩次"
+  },
+  "setting": {
+    "settingTitle": "裝置設定",
+    "languageTitle": "選擇語言"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "app": {
+    "hello": "Hello World!",
+    "home": "Home",
+    "about": "About",
+    "users": "Users",
+    "twice": "トゥワイス"
+  },
+  "setting": {
+    "settingTitle": "デバイス設定",
+    "languageTitle": "言語を選択し"
+  }
+}

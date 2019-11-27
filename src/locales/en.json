@@ -1,0 +1,10 @@
+{
+  "app": {
+    "hello": "Hello World!",
+    "home": "Home",
+    "about": "About",
+    "users": "Users",
+    "twice": "TWICE"
+  },
+  "setting": { "settingTitle": "Device Settings", "languageTitle": "Language" }
+}
