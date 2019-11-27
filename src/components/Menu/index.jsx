@@ -45,9 +45,7 @@ class Menu extends Component {
 
   componentDidMount() {
     const activeUrl = window.location.hash.replace("#", "");
-    console.log(activeUrl, menuLists);
     const foundActive = menuLists.findIndex(data => data.url === activeUrl);
-    console.log(foundActive);
     if (foundActive !== -1) {
       this.setState({
         active: foundActive

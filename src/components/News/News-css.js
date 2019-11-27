@@ -30,3 +30,20 @@ export const Text = styled.div`
     font-size: 13px;
   }
 `;
+
+export const ModalContent = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: ${props => (props.active ? "0" : "100%")};
+  z-index: 99;
+  transition: all 350ms ease;
+`;
+
+export const ModalHead = styled.div`
+  width: 100%;
+  height: 60px;
+  background: #f8cddb;
+`;
