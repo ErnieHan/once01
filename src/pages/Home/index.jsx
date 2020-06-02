@@ -1,13 +1,18 @@
-import React, { Component } from "react";
-import PhotoSwiper from "../../components/PhotoSwiper";
-import News from "../../components/News";
+import React, { Component, lazy, Suspense } from "react";
+// import PhotoSwiper from "../../components/PhotoSwiper";
+// import News from "../../components/News";
+
+const PhotoSwiper = lazy(() => import("../../components/PhotoSwiper"));
+const News = lazy(() => import("../../components/News"));
 
 export class Home extends Component {
   render() {
     return (
       <>
-        <PhotoSwiper />
-        <News />
+        <Suspense fallback={<div>loading</div>}>
+          <PhotoSwiper />
+          <News />
+        </Suspense>
       </>
     );
   }

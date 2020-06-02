@@ -20,6 +20,7 @@ class News extends Component {
       contentText: ""
     }
   };
+
   handleClick = data => {
     const lang = i18n.language;
     console.log(data[`gsx$${lang}title`]);

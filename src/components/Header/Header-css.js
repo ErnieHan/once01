@@ -9,4 +9,9 @@ export const Content = styled.header`
   position: absolute;
   transition: all 500ms ease;
   z-index: 99;
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 `;

@@ -3,19 +3,15 @@ import Swiper from "swiper";
 import { SWIPER_LISTS } from "../../constants";
 import styled from "styled-components";
 
-const Photo = styled.div`
+const Photo = styled.img`
   width: 100%;
   height: 250px;
-  background-image: ${props => `url(${props.url})`};
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 `;
 
 class PhotoSwiper extends Component {
   state = {
     lists: [],
-    fetched: false
+    fetched: false,
   };
 
   async componentDidMount() {
@@ -26,11 +22,11 @@ class PhotoSwiper extends Component {
         const data = await response.json();
         this.setState({
           fetched: true,
-          lists: data.feed.entry
+          lists: data.feed.entry,
         });
       } else {
         this.setState({
-          fetched: false
+          fetched: false,
         });
         throw new Error("fetch swiper photos failed");
       }
@@ -46,15 +42,15 @@ class PhotoSwiper extends Component {
         speed: 600,
         navigation: {
           nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
+          prevEl: ".swiper-button-prev",
         },
         pagination: {
           el: ".swiper-pagination",
           type: "bullets",
           clickable: true,
           bulletClass: "swiper-button",
-          bulletActiveClass: "swiper-button-active"
-        }
+          bulletActiveClass: "swiper-button-active",
+        },
         // autoplay: {
         //   delay: 3500,
         //   disableOnInteraction: false
@@ -72,7 +68,11 @@ class PhotoSwiper extends Component {
             <div className="swiper-wrapper">
               {lists.map((data, index) => (
                 <div className="swiper-slide" key={index}>
-                  <Photo url={data.gsx$url.$t} />
+                  <Photo
+                    data-src={data.gsx$url.$t}
+                    className="lazyload"
+                    alt="images"
+                  />
                 </div>
               ))}
             </div>

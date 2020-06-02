@@ -9,6 +9,11 @@ export const Content = styled.div`
   background: #fff;
   z-index: 99;
   display: flex;
+  @media (max-width: 767px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
 `;
 
 export const Option = styled.div`

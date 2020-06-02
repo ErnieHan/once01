@@ -7,10 +7,10 @@ import {
   readThemeCookie,
   changeTheme,
   setLanguage,
-  fetchNews
+  fetchNews,
 } from "./store/actions";
 // Router
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Style-Components
 import { Content, FlexContent, PhoneContent, Body } from "./App-css";
 // Pages
@@ -26,7 +26,7 @@ import Menu from "./components/Menu";
 class App extends React.Component {
   state = {
     headerHide: false,
-    bodyScrollTop: 0
+    bodyScrollTop: 0,
   };
 
   componentDidMount() {
@@ -48,21 +48,21 @@ class App extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.getThemeSuccessfully !== this.props.getThemeSuccessfully) {
       const element = this.refs.body;
-      element.addEventListener("scroll", e => {
+      element.addEventListener("scroll", (e) => {
         const { bodyScrollTop } = this.state;
         if (e.target.scrollTop > bodyScrollTop && e.target.scrollTop > 150) {
           // 往下滑動
           this.setState({
-            headerHide: true
+            headerHide: true,
           });
         } else {
           //往上滑動
           this.setState({
-            headerHide: false
+            headerHide: false,
           });
         }
         this.setState({
-          bodyScrollTop: e.target.scrollTop
+          bodyScrollTop: e.target.scrollTop,
         });
       });
     }
@@ -129,23 +129,23 @@ App.propTypes = {
   themeName: PropTypes.string,
   themeColors: PropTypes.object,
   getThemeSuccessfully: PropTypes.bool,
-  changeTheme: PropTypes.func
+  changeTheme: PropTypes.func,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   setAppActive: state.app.active,
   themeName: state.app.updateTheme.themeName,
   themeColors: state.app.updateTheme.themeColors,
-  getThemeSuccessfully: state.app.updateTheme.getThemeSuccessfully
+  getThemeSuccessfully: state.app.updateTheme.getThemeSuccessfully,
 });
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     setApp: () => dispatch(setApp()),
     readThemeCookie: () => dispatch(readThemeCookie()),
-    changeTheme: themeName => dispatch(changeTheme(themeName)),
+    changeTheme: (themeName) => dispatch(changeTheme(themeName)),
     setLanguage: () => dispatch(setLanguage()),
-    fetchNews: () => dispatch(fetchNews())
+    fetchNews: () => dispatch(fetchNews()),
   };
 };
 

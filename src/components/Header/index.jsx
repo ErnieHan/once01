@@ -7,7 +7,6 @@ class Header extends Component {
     const { themeColors, headerHide } = this.props;
     return (
       <Content themeColors={themeColors} headerHide={headerHide}>
-        TWICE
         <Translation>{t => <>{t("app.twice")}</>}</Translation>
       </Content>
     );

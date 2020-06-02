@@ -13,6 +13,8 @@ import "isomorphic-fetch";
 import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
 import "core-js/features/promise";
+// lazy images
+import "lazysizes";
 
 ReactDOM.render(
   <Provider store={store}>
