@@ -10,7 +10,7 @@ import {
   fetchNews,
 } from "./store/actions";
 // Router
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 // Style-Components
 import { Content, FlexContent, PhoneContent, Body } from "./App-css";
 // Pages
